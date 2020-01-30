@@ -1,0 +1,62 @@
+<!DOCTYPE html >
+<html
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="TemplatePadrao">
+
+
+<section layout:fragment="conteudo">
+	<div class="container d-flex justify-content-center">
+	
+	<!-- Material form subscription -->
+<div class="card col-5 " align="center">
+
+    <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Subscribe</strong>
+    </h5>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5">
+
+        <!-- Form -->
+        <form method="post" class="text-center" style="color: #757575;" action="#" th:action="@{/save}" th:object="${produto}">
+
+			<input type="hidden" th:field=*{id}>
+            <!-- Name -->
+            <div class="md-form mt-3">
+             <label for="materialSubscriptionFormPasswords">Nome</label>
+                <input type="text" id="materialSubscriptionFormPasswords" class="form-control" th:field="*{nome}">
+            </div>
+
+            <!-- E-mai -->
+            <div class="md-form">
+             <label for="materialSubscriptionFormEmail">Marca</label>
+             <input type="text" id="materialSubscriptionFormEmail" class="form-control" th:field="*{marca}">
+            </div>
+            
+             <div class="md-form">
+             <label for="materialSubscriptionFormEmail">Origen</label>
+             <input type="text" id="materialSubscriptionFormEmail" class="form-control" th:field="*{origen}">
+            </div>
+            
+             <div class="md-form">
+             <label for="materialSubscriptionFormEmail">Preço</label>
+             <input type="text" id="materialSubscriptionFormEmail" class="form-control" th:field="*{preco}">
+            </div>
+
+            <!-- Sign in button -->
+            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Salvar</button>
+
+        </form>
+        <!-- Form -->
+
+    </div>
+
+</div>
+<!-- Material form subscription -->
+	</div>
+</section>
+
+
+</body>
+</html>

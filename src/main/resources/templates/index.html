@@ -1,0 +1,43 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="TemplatePadrao">
+
+
+<section layout:fragment="conteudo">
+	<div class="container">
+
+		<table class="table table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Marca</th>
+					<th scope="col">Origem</th>
+					<th scope="col">Preço</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Excluir</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="produto : ${listaProduto}">
+					<th scope="row" th:text="${produto.id}"></th>
+					<td th:text="${produto.nome}"></td>
+					<td th:text="${produto.marca}"></td>
+					<td th:text="${produto.origen}"></td>
+					<td th:text="${produto.preco}"></td>
+					<td><a th:href="@{/edit/{id}(id=${produto.id})}" class="btn btn-primary"><i class="fas fa-pen "></i></a></td>
+					<td><a th:href="@{/delete/{id}(id=${produto.id})}" class="btn btn-danger"><i class="fas fa-trash-alt "></i></a></td>
+				</tr>
+	
+			</tbody>
+		</table>
+
+	</div>
+</section>
+
+
+</body>
+</html>
